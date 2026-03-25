@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/task-sessions.json",
+  "version": "1.0.0",
+  "project": "agent-kanban",
+  "repository": "mayf3/agent-kanban",
+  "sessions": [],
+  "last_updated": "2026-03-25T10:40:00+08:00",
+  "metadata": {
+    "supervisor": "agent-dev-engineer",
+    "description": "Agent看板 - 技术路线图与技能管理系统",
+    "tracking_mode": "issue-to-session"
+  }
+}
