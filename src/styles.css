@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f5f7fb;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.agent-sider {
+  min-height: 100vh;
+  border-right: 1px solid #e5e7eb;
+  padding: 28px 18px;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  padding: 28px;
+}
+
+.full-width,
+.detail-panel {
+  width: 100%;
+}
+
+.page-title,
+.agent-title,
+.objective-title {
+  margin: 0 !important;
+}
+
+.tier-filter .ant-segmented-group {
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tier-filter .ant-segmented-item {
+  flex: 1 1 auto;
+}
+
+.agent-list {
+  width: 100%;
+}
+
+.agent-list-item {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 14px !important;
+  cursor: pointer;
+  background: #ffffff;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.agent-list-item:hover,
+.agent-list-item-active {
+  border-color: #2563eb !important;
+  background: #f8fbff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.agent-summary,
+.section-card {
+  border-radius: 8px;
+}
+
+.okr-progress {
+  width: 100%;
+  border: 1px solid #eef0f4;
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.okr-progress-header,
+.okr-progress-scale {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.okr-progress-header {
+  margin-bottom: 10px;
+}
+
+.okr-progress-scale {
+  margin-top: 8px;
+}
+
+.okr-progress-track {
+  display: flex;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 999px;
+  background: #eef2f7;
+}
+
+.okr-progress-achieved,
+.okr-progress-target,
+.okr-progress-over-target,
+.okr-progress-remaining {
+  height: 100%;
+  transition: width 0.2s ease;
+}
+
+.okr-progress-target {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.22) 0,
+    rgba(37, 99, 235, 0.22) 6px,
+    rgba(37, 99, 235, 0.12) 6px,
+    rgba(37, 99, 235, 0.12) 12px
+  );
+}
+
+.okr-progress-over-target {
+  background: #52c41a;
+}
+
+.okr-progress-remaining {
+  background: #e8edf4;
+}
+
+.okr-progress-marker {
+  width: 2px;
+  height: 16px;
+  position: absolute;
+  top: -2px;
+  transform: translateX(-1px);
+  background: #111827;
+  opacity: 0.4;
+}
+
+.report-content {
+  color: #374151;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block;
+  }
+
+  .agent-sider {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    min-height: auto;
+    position: static;
+  }
+
+  .content {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .okr-progress-header,
+  .okr-progress-scale {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
