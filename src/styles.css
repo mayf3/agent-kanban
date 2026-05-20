@@ -176,3 +176,45 @@ body {
     flex-direction: column;
   }
 }
+
+/* ─── App Navigation ─────────────────────────────────────── */
+.app-root {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.app-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Weekly Reports Page ─────────────────────────────────── */
+.weekly-reports-page {
+  padding: 24px 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.weekly-reports-page .page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.weekly-reports-page .tab-content {
+  min-height: 300px;
+}
+
+/* Ant Design overrides */
+.ant-collapse-header {
+  align-items: center !important;
+}
+
+.ant-statistic-title {
+  font-size: 13px !important;
+}

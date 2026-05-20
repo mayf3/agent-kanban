@@ -27,6 +27,7 @@ import {
   type OkrStatus,
   type Tier,
 } from './data/mockAgents';
+import WeeklyReportsPage from './pages/WeeklyReportsPage';
 import './styles.css';
 
 const { Content, Sider } = Layout;
@@ -299,7 +300,11 @@ function AgentDetail({
   );
 }
 
-export default function App() {
+function AgentKanbanView({
+  onNavigateWeekly,
+}: {
+  onNavigateWeekly?: () => void;
+}) {
   const [tierFilter, setTierFilter] = useState<TierFilter>('all');
   const [selectedAgentId, setSelectedAgentId] = useState(MOCK_AGENTS[0]?.id);
   const [weeklyReports, setWeeklyReports] = useState<WeeklyReport[]>([]);
@@ -343,17 +348,7 @@ export default function App() {
   }
 
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: theme.defaultAlgorithm,
-        token: {
-          borderRadius: 6,
-          colorPrimary: '#2563eb',
-          fontFamily:
-            '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji"',
-        },
-      }}
-    >
+    <>
       {contextHolder}
       <Layout className="app-shell">
         <Sider width={360} theme="light" className="agent-sider">
@@ -372,6 +367,10 @@ export default function App() {
               value={tierFilter}
               onChange={(value) => handleTierChange(value as TierFilter)}
             />
+
+            <Button block type="dashed" onClick={onNavigateWeekly}>
+              📋 周报系统
+            </Button>
 
             <List
               className="agent-list"
@@ -400,6 +399,50 @@ export default function App() {
           )}
         </Content>
       </Layout>
+    </>
+  );
+}
+
+export default function App() {
+  const [page, setPage] = useState<'kanban' | 'weekly'>('kanban');
+
+  return (
+    <ConfigProvider
+      theme={{
+        algorithm: theme.defaultAlgorithm,
+        token: {
+          borderRadius: 6,
+          colorPrimary: '#2563eb',
+          fontFamily:
+            '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji"',
+        },
+      }}
+    >
+      <div className="app-root">
+        {/* Top Navigation */}
+        <div className="app-nav">
+          <Space size={0}>
+            <Button
+              type={page === 'kanban' ? 'primary' : 'text'}
+              onClick={() => setPage('kanban')}
+            >
+              📊 管理看板
+            </Button>
+            <Button
+              type={page === 'weekly' ? 'primary' : 'text'}
+              onClick={() => setPage('weekly')}
+            >
+              📋 周报系统
+            </Button>
+          </Space>
+        </div>
+
+        {page === 'kanban' ? (
+          <AgentKanbanView onNavigateWeekly={() => setPage('weekly')} />
+        ) : (
+          <WeeklyReportsPage onNavigateKanban={() => setPage('kanban')} />
+        )}
+      </div>
     </ConfigProvider>
   );
 }
