@@ -28,6 +28,8 @@ import {
   type Tier,
 } from './data/mockAgents';
 import WeeklyReportsPage from './pages/WeeklyReportsPage';
+import PostmortemsPage from './pages/PostmortemsPage';
+import GoalCardsPage from './pages/GoalCardsPage';
 import './styles.css';
 
 const { Content, Sider } = Layout;
@@ -404,7 +406,7 @@ function AgentKanbanView({
 }
 
 export default function App() {
-  const [page, setPage] = useState<'kanban' | 'weekly'>('kanban');
+  const [page, setPage] = useState<'kanban' | 'weekly' | 'postmortem' | 'goals'>('kanban');
 
   return (
     <ConfigProvider
@@ -434,13 +436,29 @@ export default function App() {
             >
               📋 周报系统
             </Button>
+            <Button
+              type={page === 'postmortem' ? 'primary' : 'text'}
+              onClick={() => setPage('postmortem')}
+            >
+              🔥 验尸报告
+            </Button>
+            <Button
+              type={page === 'goals' ? 'primary' : 'text'}
+              onClick={() => setPage('goals')}
+            >
+              🎯 目标卡
+            </Button>
           </Space>
         </div>
 
         {page === 'kanban' ? (
           <AgentKanbanView onNavigateWeekly={() => setPage('weekly')} />
-        ) : (
+        ) : page === 'weekly' ? (
           <WeeklyReportsPage onNavigateKanban={() => setPage('kanban')} />
+        ) : page === 'postmortem' ? (
+          <PostmortemsPage />
+        ) : (
+          <GoalCardsPage />
         )}
       </div>
     </ConfigProvider>

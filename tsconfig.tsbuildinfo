@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/weeklyreports.ts","./src/data/mockagents.ts","./src/pages/weeklyreportspage.tsx"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/goals.ts","./src/api/postmortems.ts","./src/api/weeklyreports.ts","./src/data/mockagents.ts","./src/pages/goalcardspage.tsx","./src/pages/postmortemspage.tsx","./src/pages/weeklyreportspage.tsx"],"version":"5.9.3"}
