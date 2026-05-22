@@ -41,7 +41,7 @@ async function getToken(): Promise<string> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: 'frontend-react-engineer@agent.local',
-        password: 'agent2026',
+        password: process.env.API_PASSWORD || '',
       }),
     });
     const data = await res.json();
