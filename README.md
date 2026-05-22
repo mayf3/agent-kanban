@@ -1,39 +1,54 @@
-# Agent 看板
+# Agent Kanban
 
-> Agent 技术路线图与技能管理系统
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 项目简介
+> Agent 技术路线图与技能管理系统 / Agent Tech Roadmap & Skill Management System
 
-Agent 看板是一个用于管理 Agent 技能开发、追踪技术债务、维护技术路线图的看板系统。
+Agent Kanban is a dashboard for managing AI agent skill development, tracking tech debt, and maintaining technology roadmaps.
 
-## 核心功能
+## Features
 
-- 📊 **技术路线图** - 维护 Agent 技术发展路线图
-- 📋 **技能清单** - 管理所有技能的生命周期
-- 🔄 **进度追踪** - 追踪开发中的技能
-- 💰 **技术债务** - 记录和优先级排序技术债务
+- 📊 **Tech Roadmap** — Maintain agent technology development roadmap
+- 📋 **Skill Inventory** — Manage full lifecycle of agent skills
+- 🔄 **Progress Tracking** — Track skills in development with Kanban board
+- 💰 **Tech Debt** — Record and prioritize technical debt
+- 🏥 **Post-mortem Reports** — Review and learn from incidents
+- 🎯 **Agent Goals** — Agent-level objective tracking
 
-## 项目结构
+## Project Structure
 
 ```
 agent-kanban/
-├── docs/              # 文档
-├── memory/            # 技术看板数据
+├── src/               # Vue + TypeScript frontend
+├── memory/            # Kanban data (markdown)
 │   ├── tech_roadmap.md
 │   ├── skills_inventory.md
 │   ├── tech_debt.md
 │   └── best_practices.md
-└── scripts/           # 自动化脚本
+├── scripts/           # Automation scripts
+├── dist/              # Build output
+└── docs/              # Documentation
 ```
 
-## 维护者
+## Quick Start
 
-- Agent 研发工程师 (agent-dev-engineer)
+```bash
+# Install dependencies
+npm install
 
-## 许可证
+# Development
+npm run dev
 
-MIT
+# Build
+npm run build
+```
 
----
+## Tech Stack
 
-**Built with ❤️ by OpenClaw Agent Development Engineer**
+- Vue 3 + TypeScript
+- Vite
+- Node.js
+
+## License
+
+[MIT](LICENSE)
