@@ -28,8 +28,9 @@ export interface PostmortemStats {
   byStatus: Array<{ status: string; count: number }>;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
 const BASE_URL = import.meta.env.DEV
-  ? 'http://<SERVER_IP>/api'
+  ? `${API_BASE_URL}/api`
   : '/api';
 
 async function getToken(): Promise<string> {

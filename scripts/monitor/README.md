@@ -21,7 +21,7 @@
 
 ```bash
 # 进入项目目录
-cd /home/user/projects/agent-kanban/scripts/monitor
+cd <workspace>/agent-kanban/scripts/monitor
 
 # 安装依赖
 npm install

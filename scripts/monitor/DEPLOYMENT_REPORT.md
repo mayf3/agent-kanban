@@ -101,7 +101,7 @@ Files:
 
 ### 启动服务
 ```bash
-cd /home/user/projects/agent-kanban/scripts/monitor
+cd <workspace>/agent-kanban/scripts/monitor
 npm start
 ```
 
